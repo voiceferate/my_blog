@@ -1,5 +1,8 @@
 MyBlog::Application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
+  get '/about', to: 'pages#about'
   root "posts#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
